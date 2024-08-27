@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DataImport.Common</name>
+    </assembly>
+    <members>
+        <member name="M:DataImport.Common.Encryption.Encrypt(System.String,System.String)">
+            <summary>
+            Encrypts plaintext using the Encrypt-then-MAC (EtM) mode via the Rijndael cipher in 
+            CBC mode with a password derived HMAC SHA-512 salt. A random 128-bit Initialization 
+            Vector is generated for the cipher.
+            </summary>
+            <param name="plainText">The plainText to encrypt.</param>
+            <param name="encryptionKey">The encryptionKey to encrypt the plainText with.</param>
+            <returns>The Base64 encoded EtM ciphertext.</returns>
+        </member>
+        <member name="M:DataImport.Common.Encryption.Decrypt(System.String,System.String)">
+            <summary>
+            Decrypts EtM ciphertext using the Rijndael cipher in CBC mode with a password derived 
+            HMAC SHA-512 salt.
+            </summary>
+            <param name="ciphertText">The Base64 encoded EtM ciphertext to decrypt.</param>
+            <param name="encryptionKey">The encryptionKey to decrypt the EtM ciphertext with.</param>
+            <returns>The plaintext.</returns>
+        </member>
+        <member name="M:DataImport.Common.Enums.LogLevel.GetValidList(System.String)">
+            <summary>
+            Generates the list based on the filter
+            For example, if filter is set to "WARNING" => you will see "WARNING", "ERROR", and "CRITICAL" 
+            </summary>
+            <param name="filter">Valid values Constants LogLevel </param>
+            <returns>A string list with levels to be applied in the Log</returns>
+        </member>
+        <member name="M:DataImport.Common.ExtensionMethods.StringExtensions.IsLike(System.String,System.String)">
+            <summary>
+            Replace the * with an .* and the ? with a dot. Put ^ at the beginning and a $ at the end
+            </summary>
+            <param name="value"></param>
+            <param name="textWithWildCard"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DataImport.Common.Preprocessors.Cmdlets.InvokeOdsApiCmdletBase.RequestPath">
+            <summary>
+            Gets or sets a request path to append to the base url. For example, /ed-fi/studentEducationOrganizationAssociations?limit=1
+            </summary>
+        </member>
+        <member name="T:DataImport.Common.Preprocessors.PowerShellPreprocessorService">
+            <summary>
+            * Note for future migration to .NET Core. *
+            PowerShell preprocessor requires PowerShell Host assemblies to actually run PowerShell scripts.
+            Currently System.Management.Automation.dll is taken from GAC. It is part of Windows and could be for PowerShell 5.1 or lower depending on version of Windows.
+            The assembly reference was manually added to the proj file. When migrating to .NET Core it is recommended to use either System.Management.Automation or PowerShell.SDK NuGet package.
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Http.HttpContextHelper">
+            <summary>
+            Temporary helper class for retrieving the current <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> . This temporary
+            workaround should be removed in the future and <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> HttpContext should be retrieved
+            from the current controller, middleware, or page instead. If working in another
+            component, the current <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/> can be retrieved from an <see cref="T:Microsoft.AspNetCore.Http.IHttpContextAccessor"/>
+            retrieved via dependency injection.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Http.HttpContextHelper.Current">
+            <summary>
+            Gets the current <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>. Returns <c>null</c> if there is no current <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>.
+            </summary>
+        </member>
+    </members>
+</doc>

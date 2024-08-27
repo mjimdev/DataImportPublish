@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>DataImport.Web</id>
+    <version>2.3.0</version>
+    <title>Ed-Fi DataImport</title>
+    <authors>Ed-Fi Alliance</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">edfi</license>
+    <licenseUrl>https://licenses.nuget.org/edfi</licenseUrl>
+    <projectUrl>https://github.com/Ed-Fi-Alliance/Ed-Fi-DataImport</projectUrl>
+    <description>Ed-Fi DataImport</description>
+    <summary>Ed-Fi DataImport</summary>
+    <copyright>Copyright © 2021, Ed-Fi Alliance, LLC.</copyright>
+  </metadata>
+</package>
